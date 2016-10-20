@@ -5,7 +5,7 @@
 @endsection
 
 @section('styles')
-    <link rel="stylesheet" href="" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 @endsection
 
 @section('content')
@@ -32,6 +32,5 @@
              <button type="submit" class="btn">Submit Quote</button>
              <input type="hidden" name="_token" value="{{ Session::token() }}"/>
          </form>
-        
     </section>
 @endsection
