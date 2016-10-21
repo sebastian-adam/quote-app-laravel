@@ -7,6 +7,7 @@
         @yield('styles')
     </head>
     <body>
+        @include('includes.header')
         <div class="main">
             @yield('content')
         </div>
