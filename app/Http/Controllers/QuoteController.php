@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Author;
 use App\Quote;
 use Illuminate\Http\Request;
+use App\Events\QuoteCreated;
+use Illuminate\Support\Facades\Event;
 
 class QuoteController extends Controller
 {
@@ -40,6 +42,8 @@ class QuoteController extends Controller
         $quote = new Quote();
         $quote->content = $quoteText;
         $author->quotes()->save($quote);
+        
+        Event::fire(new QuoteCreated($author));
         
         return redirect()->route('index')->with([
             'success' => 'Quote saved!'    
